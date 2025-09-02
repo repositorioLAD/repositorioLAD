@@ -2,31 +2,74 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Repositorio de Video-Tutoriales</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="auth.js"></script>
+  <title>Repositorio LAD</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+    }
+    /* Login overlay */
+    #login {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0,0,0,0.6);
+    }
+    .login-box {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    input {
+      padding: 10px;
+      margin: 10px 0;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #4CAF50;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+    /* Contenido oculto hasta login correcto */
+    #contenido {
+      display: none;
+      padding: 20px;
+    }
+  </style>
 </head>
-<body onload="pedirClave()">
-  <header>
-    <h1>Repositorio de Video-Tutoriales</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="about.html">Sobre el proyecto</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-  </header>
+<body>
+  <!-- Pantalla de login -->
+  <div id="login">
+    <div class="login-box">
+      <h2>Acceso al Repositorio LAD</h2>
+      <input type="text" id="matricula" placeholder="Ingresa tu matrícula">
+      <br>
+      <button onclick="verificar()">Entrar</button>
+      <p id="mensaje" class="error"></p>
+    </div>
+  </div>
 
-  <main>
-    <h2>Lista de tutoriales</h2>
-    <p>Aquí encontrarás los tutoriales disponibles hasta ahora:</p>
-    <ul>
-      <li><a href="https://drive.google.com/file/d/1BeJjGklM5QjN6QpfXCkb_HIgWLj6SEVy/view?usp=sharing" target="_blank">Tutorial 1: Introducción</a></li>
-    </ul>
-  </main>
+  <!-- Contenido real de tu página -->
+  <div id="contenido">
+    <h1>Bienvenido al Repositorio LAD</h1>
+    <p>Aquí va tu contenido normal: enlaces, videos, lo que tenías antes en index.html.</p>
+  </div>
 
-  <footer>
-    <p>© 2025 Proyecto de apoyo académico</p>
-  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
