@@ -1,28 +1,38 @@
+// Verificar login en index.html
 async function verificar() {
-    const input = document.getElementById("matricula").value.trim();
-    const mensaje = document.getElementById("mensaje");
-  
-    try {
-      // Cargar la lista desde el JSON
-      const response = await fetch("matriculas.json");
-      const data = await response.json();
-      const validas = data.validas;
-  
-      // Normalizar (ignorar mayúsculas/minúsculas)
-      const normalizado = input.toLowerCase();
-      const listaNormalizada = validas.map(m => m.toLowerCase());
-  
-      if (listaNormalizada.includes(normalizado)) {
-        // ✅ mostrar contenido
-        document.getElementById("login").style.display = "none";
-        document.getElementById("contenido").style.display = "block";
-      } else {
-        // ❌ acceso denegado
-        mensaje.textContent = "Acceso denegado. Intenta de nuevo.";
-      }
-    } catch (error) {
-      console.error("Error al cargar matriculas.json:", error);
-      mensaje.textContent = "Hubo un problema al verificar la matrícula.";
+  const matricula = document.getElementById("matricula").value.trim().toLowerCase();
+  const mensaje = document.getElementById("mensaje");
+
+  try {
+    const resp = await fetch("matriculas.json");
+    const data = await resp.json();
+    const validas = data.matriculas.map(m => m.toLowerCase());
+
+    if (validas.includes(matricula)) {
+      localStorage.setItem("logeado", "true");
+      window.location.href = "menu.html";
+    } else {
+      mensaje.textContent = "Acceso denegado";
+    }
+  } catch (err) {
+    mensaje.textContent = "Error cargando datos";
+    console.error(err);
+  }
+}
+
+// Proteger páginas distintas de index
+window.onload = function() {
+  const actual = window.location.pathname.split("/").pop();
+
+  if (actual !== "index.html") {
+    if (localStorage.getItem("logeado") !== "true") {
+      window.location.href = "index.html";
     }
   }
-  
+}
+
+// Logout
+function logout() {
+  localStorage.removeItem("logeado");
+  window.location.href = "index.html";
+}
