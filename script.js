@@ -1,22 +1,32 @@
-const numMap = { "6": "4", "4": "6", "2": "8", "8": "2", "7": "3", "3": "7", "9": "1", "1": "9", "5": "0", "0": "5" };
+// Mapeo de números para la ofuscación
+const numMap = { 
+  "6": "4", "4": "6", 
+  "2": "8", "8": "2", 
+  "7": "3", "3": "7", 
+  "9": "1", "1": "9", 
+  "5": "0", "0": "5" 
+};
+
 const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-// transforma la matrícula ingresada según tu algoritmo
+// Función que transforma la matrícula ingresada según el algoritmo
 function transformar(matricula) {
   matricula = matricula.toLowerCase().trim();
-  if (matricula.length < 3) return ""; // seguridad
+  if (matricula.length < 3) return "";
 
   let salida = [];
 
-  // letra inicial
-  if (/[a-z]/.test(matricula[0])) {
-    let base = alphabet.indexOf(matricula[0]);
-    let tercerNum = parseInt(matricula[2]);
-    if (isNaN(tercerNum)) tercerNum = 0;
+  // letra inicial + tercer número
+  let primerLetra = matricula[0];
+  let tercerNum = parseInt(matricula[2]);
+  if (isNaN(tercerNum)) tercerNum = 0;
+
+  if (/[a-z]/.test(primerLetra)) {
+    let base = alphabet.indexOf(primerLetra);
     let nuevaPos = (base + tercerNum) % 26;
     salida.push(alphabet[nuevaPos]);
   } else {
-    salida.push(matricula[0]);
+    salida.push(primerLetra);
   }
 
   // resto de la matrícula
@@ -28,7 +38,7 @@ function transformar(matricula) {
   return salida.join("");
 }
 
-// función de login
+// Función de login
 async function verificar() {
   const matricula = document.getElementById("matricula").value;
   const mensaje = document.getElementById("mensaje");
@@ -39,6 +49,8 @@ async function verificar() {
     const validas = data.matriculas.map(m => m.toLowerCase());
 
     const ofuscada = transformar(matricula);
+
+    console.log("Matrícula transformada:", ofuscada); // Para depuración
 
     if (validas.includes(ofuscada)) {
       localStorage.setItem("logeado", "true");
@@ -52,7 +64,7 @@ async function verificar() {
   }
 }
 
-// proteger todas las páginas excepto index
+// Proteger todas las páginas excepto index.html
 window.onload = function() {
   const actual = window.location.pathname.split("/").pop();
   if (actual !== "index.html") {
@@ -62,7 +74,7 @@ window.onload = function() {
   }
 }
 
-// cerrar sesión
+// Cerrar sesión
 function logout() {
   localStorage.removeItem("logeado");
   window.location.href = "index.html";
