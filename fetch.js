@@ -1,4 +1,3 @@
-// Mapeo de números para la ofuscación
 const numMap = { 
   "6": "4", "4": "6", 
   "2": "8", "8": "2", 
@@ -9,16 +8,16 @@ const numMap = {
 
 const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-// Función que transforma la matrícula ingresada según el algoritmo
-function transformar(matricula) {
-  matricula = matricula.toLowerCase().trim();
-  if (matricula.length < 3) return "";
+//transform
+function transformar(key) {
+  key = key.toLowerCase().trim();
+  if (key.length < 3) return "";
 
   let salida = [];
 
-  // letra inicial + tercer número
-  let primerLetra = matricula[0];
-  let tercerNum = parseInt(matricula[3]);
+  //letrado
+  let primerLetra = key[0];
+  let tercerNum = parseInt(key[3]);
   if (isNaN(tercerNum)) tercerNum = 0;
 
   if (/[a-z]/.test(primerLetra)) {
@@ -29,28 +28,26 @@ function transformar(matricula) {
     salida.push(primerLetra);
   }
 
-  // resto de la matrícula
-  for (let i = 1; i < matricula.length; i++) {
-    let ch = matricula[i];
+  //numerico
+  for (let i = 1; i < key.length; i++) {
+    let ch = key[i];
     salida.push(numMap[ch] || ch);
   }
 
   return salida.join("");
 }
 
-// Función de login
+//login
 async function verificar() {
-  const matricula = document.getElementById("matricula").value;
+  const key = document.getElementById("key").value;
   const mensaje = document.getElementById("mensaje");
 
   try {
-    const resp = await fetch("matriculas.json");
+    const resp = await fetch("keys.json");
     const data = await resp.json();
-    const validas = data.matriculas.map(m => m.toLowerCase());
+    const validas = data.keys.map(m => m.toLowerCase());
 
-    const ofuscada = transformar(matricula);
-
-    console.log("Matrícula transformada:", ofuscada); // Para depuración
+    const ofuscada = transformar(key);
 
     if (validas.includes(ofuscada)) {
       localStorage.setItem("logeado", "true");
@@ -74,7 +71,7 @@ window.onload = function() {
   }
 }
 
-// Cerrar sesión
+//logout
 function logout() {
   localStorage.removeItem("logeado");
   window.location.href = "index.html";
