@@ -18,7 +18,7 @@ function transformar(matricula) {
 
   // letra inicial + tercer número
   let primerLetra = matricula[0];
-  let tercerNum = parseInt(matricula[2]);
+  let tercerNum = parseInt(matricula[3]);
   if (isNaN(tercerNum)) tercerNum = 0;
 
   if (/[a-z]/.test(primerLetra)) {
