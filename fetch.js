@@ -62,14 +62,30 @@ async function verificar() {
 }
 
 // Proteger todas las páginas excepto index.html
-window.onload = function() {
-  const actual = window.location.pathname.split("/").pop();
-  if (actual !== "index.html") {
-    if (localStorage.getItem("logeado") !== "true") {
-      window.location.href = "index.html";
+window.onload = function () {
+    const actual = window.location.pathname.split("/").pop();
+
+    // proteger páginas
+    if (actual !== "index.html") {
+        if (localStorage.getItem("logeado") !== "true") {
+            window.location.href = "index.html";
+        }
     }
-  }
-}
+
+    // enter en el login
+    if (actual === "index.html") {
+        const input = document.getElementById("key");
+        if (input) {
+            input.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    verificar();
+                }
+            });
+        }
+    }
+};
+
 
 //logout
 function logout() {
@@ -77,11 +93,3 @@ function logout() {
   window.location.href = "index.html";
 }
 
-
-//enter listening
-document.getElementById("key").addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
-        event.preventDefault(); //no refresh
-        verificar();
-    }
-});
