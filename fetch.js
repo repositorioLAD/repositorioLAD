@@ -76,3 +76,12 @@ function logout() {
   localStorage.removeItem("logeado");
   window.location.href = "index.html";
 }
+
+
+//enter listening
+document.getElementById("key").addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); //no refresh
+        verificar();
+    }
+});
