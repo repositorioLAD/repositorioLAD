@@ -6,16 +6,22 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="login">
-    <div class="login-box">
-      <h2>Acceso al Repositorio LAD</h2>
-      <input type="text" id="key" placeholder="Ingresa tu matrícula">
-      <br>
-      <button onclick="verificar()">Entrar</button>
-      <p id="mensaje" class="error"></p>
-    </div>
-  </div>
+    <div id="login">
+        <div class="login-box">
+            <h2>Acceso al Repositorio LAD</h2>
 
-  <script src="fetch.js"></script>
+            <!-- FORM: enter dispara onsubmit -->
+            <form id="loginForm" onsubmit="verificar(); return false;">
+                <input type="text" id="key" placeholder="Ingresa tu matrícula" autocomplete="off" />
+                <br>
+                <button type="submit">Entrar</button>
+            </form>
+
+            <p id="mensaje" class="error"></p>
+        </div>
+    </div>
+
+
+    <script src="fetch.js"></script>
 </body>
 </html>
