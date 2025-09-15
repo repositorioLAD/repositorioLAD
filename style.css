@@ -1,13 +1,13 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Arial Narrow", Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #f5f5f5;
-  color: #333;
+  background: white;
+  color: black;
 }
 
 header {
-  background: #1e3a8a;
+  background: white;
   color: white;
   padding: 1rem;
 }
@@ -16,14 +16,23 @@ header h1 {
   margin: 0;
 }
 
+.page img{
+  width: 350px;
+  height: auto;
+  display: block;
+  margin: 0;
+}
+
+
 nav a {
-  color: white;
+  font-size: 1.25rem;
+  color: black;
   margin-right: 1rem;
   text-decoration: none;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: rgb(71, 83, 104);
 }
 
 main {
@@ -57,6 +66,13 @@ footer {
   text-align: center;
 }
 
+.login-box img {
+  width: 350px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 input {
   padding: 10px;
   margin: 10px 0;
@@ -78,3 +94,34 @@ button {
   color: red;
   margin-top: 10px;
 }
+
+.drop{
+  position: relative;
+  display: inline-block;
+}
+
+.dropCnt{
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+.dropCnt a{
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropCnt a:hover{
+  background-color: #ddd;
+}
+
+.drop:hover .dropCnt{
+  display: block;
+}
+

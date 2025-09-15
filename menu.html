@@ -4,16 +4,26 @@
   <meta charset="UTF-8">
   <title>Repositorio LAD - Menú</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/icon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
-    <h1>Repositorio LAD</h1>
-    <nav>
-      <a href="menu.html">Inicio</a>
-      <a href="about.html">Acerca de</a>
-      <a href="contact.html">Contacto</a>
-      <a href="#" onclick="logout()">Salir</a>
-    </nav>
+    <div class="page">
+      <a href="menu.html">
+        <img src="images/rl_logo.png" alt="Repositorio LAD GDL">
+      </a>
+      <nav>
+        <div class="drop">
+          <a href="about.html" class="dropBtn"> Tutoriales</a>
+          <div class="dropCnt">
+            <a href="aboutMaya.html">Maya</a>
+          </div>
+        </div>
+        <a href="contact.html">Contacto</a>
+        <a href="#" onclick="logout()">Salir</a>
+      </nav>
+
+    </div>
   </header>
 
   <main>
