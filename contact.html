@@ -8,36 +8,42 @@
   <link rel="icon" href="images/icon.ico" type="image/x-icon">
 </head>
 <body>
-  <header>
-    <div class="page">
+   <header>
+    <div class="header-top">
       <a href="menu.html">
-        <img src="images/rl_logo.png" alt="Repositorio LAD GDL">
+        <img src="images/rl_logo.png" alt="Repositorio LAD GDL" class="logo">
       </a>
-      <nav>
-        <div class="drop">
-          <a href="#" class="dropBtn"> Tutoriales</a>
-          <div class="dropCnt">
-            <a href="aboutMaya.html">Maya</a>
-          </div>
-        </div>
-        <a href="contact.html">Contacto</a>
-        <div class="drop">
-          <a href="#" class="dropBtn">Guías</a>
-          <div class="dropCnt">
-            <a href="guidesMaya.html">Maya</a>
-        </div>
-        <a href="#" onclick="logout()">Salir</a>
-      </nav>
-
+      <a href="#" onclick="logout()" class="logout">
+        <img src="images/salirIcon.png" alt="Salir">
+      </a>
     </div>
+
+    <nav class="main-nav">
+      <div class="drop">
+        <a href="#" class="dropBtn">Tutoriales</a>
+        <div class="dropCnt">
+          <a href="aboutMaya.html">Maya</a>
+        </div>
+      </div>
+      <div class="drop">
+        <a href="#" class="dropBtn">Guías</a>
+        <div class="dropCnt">
+          <a href="guidesMaya.html">Maya</a>
+        </div>
+      </div>
+      <a href="contact.html">Contacto</a>
+    </nav>
   </header>
 
   <main>
-    <p>Si tienes dudas o sugerencias, escribe a: <a href="mailto:repositorio.lad@gmail.com">repositorio.lad@gmail.com</a></p>
+    <h2>Cordinadora académica y asesores de catedra</h2>
+    <img src="images/asesorías.jpeg" alt="Imagen no disponible, por favor reportalo si lees este mensaje">
+    <p>Si tienes dudas sobre la página, sugerencias, o encuentras bugs escribe a: <a href="mailto:repositorio.lad@gmail.com">repositorio.lad@gmail.com</a></p>
+    <p>Atte. Coordinación y soporte técnico del RepositorioLAD GDL: Jorge Alfonso</p>
   </main>
 
   <footer>
-    <p>Con tu ayuda podemos hacer el repositorio mejor. Reporta bugs o envía sugerencias a: repositorio.lad@gmail.com</p>
+    <p>Con tu ayuda podemos hacer el repositorio mejor. Reporta bugs o envía sugerencias a:  <a href="mailto:repositorio.lad@gmail.com">repositorio.lad@gmail.com</a></p>
   </footer>
 
   <script src="fetch.js"></script>

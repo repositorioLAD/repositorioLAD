@@ -9,43 +9,52 @@
 </head>
 <body>
   <header>
-    <div class="page">
+    <div class="header-top">
       <a href="menu.html">
-        <img src="images/rl_logo.png" alt="Repositorio LAD GDL">
+        <img src="images/rl_logo.png" alt="Repositorio LAD GDL" class="logo">
       </a>
-      <nav>
-        <div class="drop">
-          <a href="#" class="dropBtn"> Tutoriales</a>
-          <div class="dropCnt">
-            <a href="aboutMaya.html">Maya</a>
-          </div>
-        </div>
-        <a href="contact.html">Contacto</a>
-        <div class="drop">
-          <a href="#" class="dropBtn">Guías</a>
-          <div class="dropCnt">
-            <a href="guidesMaya.html">Maya</a>
-        </div>
-        <a href="#" onclick="logout()">Salir</a>
-      </nav>
-
+      <a href="#" onclick="logout()" class="logout">
+        <img src="images/salirIcon.png" alt="Salir">
+      </a>
     </div>
+
+    <nav class="main-nav">
+      <div class="drop">
+        <a href="#" class="dropBtn">Tutoriales</a>
+        <div class="dropCnt">
+          <a href="aboutMaya.html">Maya</a>
+        </div>
+      </div>
+      <div class="drop">
+        <a href="#" class="dropBtn">Guías</a>
+        <div class="dropCnt">
+          <a href="guidesMaya.html">Maya</a>
+        </div>
+      </div>
+      <a href="contact.html">Contacto</a>
+    </nav>
   </header>
 
   <main>
+    <h2>Graph editor</h2>
+    <h3>Introducción al Graph editor en Maya</h3>
     <p>
         <iframe width="560" height="315" 
-            src="https://www.youtube.com/embed/DGNYZpm9JmM" 
-            title="YouTube video player" 
+            src= https://www.youtube.com/embed/TOAs8-_hXjA 
+            title="Introducción al Graph editor - Autodesk Maya 2026" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen>
         </iframe>
     </p>
+    <p>Contenido: Santiago Serrano Tamayo</p>
+    <p>Revisión: Vianey Madrigal Pérez</p>
+   
   </main>
 
   <footer>
-     <p>Con tu ayuda podemos hacer el repositorio mejor. Reporta bugs o envía sugerencias a: repositorio.lad@gmail.com</p>
+    <p>Por ningun motivo está permitido compartir los video-tutoriales con personas externas al Tecnólogico de Monterrey(estudiantes, exaLADS o profesorado)</p>
+    <p>Con tu ayuda podemos hacer el repositorio mejor. Reporta bugs o envía sugerencias a:  <a href="mailto:repositorio.lad@gmail.com">repositorio.lad@gmail.com</a></p>
   </footer>
 
   <script src="fetch.js"></script>

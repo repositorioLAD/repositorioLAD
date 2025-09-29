@@ -9,36 +9,41 @@
 </head>
 <body>
   <header>
-    <div class="page">
+    <div class="header-top">
       <a href="menu.html">
-        <img src="images/rl_logo.png" alt="Repositorio LAD GDL">
+        <img src="images/rl_logo.png" alt="Repositorio LAD GDL" class="logo">
       </a>
-      <nav>
-        <div class="drop">
-          <a href="#" class="dropBtn"> Tutoriales</a>
-          <div class="dropCnt">
-            <a href="aboutMaya.html">Maya</a>
-          </div>
-        </div>
-        <a href="contact.html">Contacto</a>
-        <div class="drop">
-          <a href="#" class="dropBtn">Guías</a>
-          <div class="dropCnt">
-            <a href="guidesMaya.html">Maya</a>
-        </div>
-        <a href="#" onclick="logout()">Salir</a>
-      </nav>
-
+      <a href="#" onclick="logout()" class="logout">
+        <img src="images/salirIcon.png" alt="Salir">
+      </a>
     </div>
+
+    <nav class="main-nav">
+      <div class="drop">
+        <a href="#" class="dropBtn">Tutoriales</a>
+        <div class="dropCnt">
+          <a href="aboutMaya.html">Maya</a>
+        </div>
+      </div>
+      <div class="drop">
+        <a href="#" class="dropBtn">Guías</a>
+        <div class="dropCnt">
+          <a href="guidesMaya.html">Maya</a>
+        </div>
+      </div>
+      <a href="contact.html">Contacto</a>
+    </nav>
   </header>
 
-  <main>
-    <h1>Guías rápidas y atajos de Maya</h1>
+
+    <main>
+    <h2>Autodesk Maya</h2>
 
     <div class="guide-controls">
-      <label for="search" class="sr-only">Buscar atajo</label>
-      <input id="search" type="search" placeholder="Buscar atajo o función (ej. 'Alt', 'Rotar', 'F8')" autocomplete="off">
+      <label for="search" class="sr-only"></label>
+      <input id="search" type="search" placeholder="Barra de búsqueda (busca palabras clave: shift, selección, f8)" autocomplete="off">
     </div>
+    
 
     <div class="table-wrap">
       <table id="shortcutsTable" class="guides-table">
@@ -78,7 +83,8 @@
   </main>
 
   <footer>
-     <p>Con tu ayuda podemos hacer el repositorio mejor. Reporta bugs o envía sugerencias a: repositorio.lad@gmail.com</p>
+    <p>Contribuyentes de redacción: Julianna Alvarado</p>
+    <p>Con tu ayuda podemos hacer el repositorio mejor. Reporta bugs o envía sugerencias a:  <a href="mailto:repositorio.lad@gmail.com">repositorio.lad@gmail.com</a></p>
   </footer>
 
   <script src="fetch.js"></script> <!-- mantiene la protección / logout -->
