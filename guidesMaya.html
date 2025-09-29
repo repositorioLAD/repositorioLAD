@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guías y Atajos — Repositorio LAD</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/icon.ico" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <div class="page">
+      <a href="menu.html">
+        <img src="images/rl_logo.png" alt="Repositorio LAD GDL">
+      </a>
+      <nav>
+        <div class="drop">
+          <a href="#" class="dropBtn"> Tutoriales</a>
+          <div class="dropCnt">
+            <a href="aboutMaya.html">Maya</a>
+          </div>
+        </div>
+        <a href="contact.html">Contacto</a>
+        <div class="drop">
+          <a href="#" class="dropBtn">Guías</a>
+          <div class="dropCnt">
+            <a href="guidesMaya.html">Maya</a>
+        </div>
+        <a href="#" onclick="logout()">Salir</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+    <h1>Guías rápidas y atajos de Maya</h1>
+
+    <div class="guide-controls">
+      <label for="search" class="sr-only">Buscar atajo</label>
+      <input id="search" type="search" placeholder="Buscar atajo o función (ej. 'Alt', 'Rotar', 'F8')" autocomplete="off">
+    </div>
+
+    <div class="table-wrap">
+      <table id="shortcutsTable" class="guides-table">
+        <thead>
+          <tr>
+            <th>Atajo</th>
+            <th>Función</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Q</td><td>Herramienta de Selección</td></tr>
+          <tr><td>W</td><td>Herramienta de Mover</td></tr>
+          <tr><td>E</td><td>Herramienta de Rotar</td></tr>
+          <tr><td>R</td><td>Herramienta de Escala</td></tr>
+          <tr><td>Alt + Botón Izquierdo</td><td>Rota la cámara</td></tr>
+          <tr><td>Alt + Botón Central</td><td>Mueve la cámara</td></tr>
+          <tr><td>Alt + Botón Derecho</td><td>Acercar / alejar</td></tr>
+          <tr><td>F</td><td>Centra el objeto seleccionado en la vista</td></tr>
+          <tr><td>A</td><td>Ajusta todos los objetos para que llenen el panel de la vista</td></tr>
+          <tr><td>Barra espaciadora</td><td>Alterna entre un panel y cuatro paneles</td></tr>
+          <tr><td>Ctrl + D</td><td>Duplica el objeto seleccionado</td></tr>
+          <tr><td>Ctrl + G</td><td>Agrupa los objetos seleccionados</td></tr>
+          <tr><td>G</td><td>Repite la última acción</td></tr>
+          <tr><td>F8</td><td>Cambia entre modo objeto y modo edición</td></tr>
+          <tr><td>3</td><td>Activar visualización con calidad suave</td></tr>
+          <tr><td>4</td><td>Activar vista de alambre (wireframe)</td></tr>
+          <tr><td>5</td><td>Vista en sombreado normal (con texturas)</td></tr>
+          <tr><td>7</td><td>Vista con iluminación</td></tr>
+          <tr><td>Ctrl + H</td><td>Ocultar selección</td></tr>
+          <tr><td>Shift + H</td><td>Mostrar selección</td></tr>
+          <tr><td>Shift + I</td><td>Aislar selección</td></tr>
+        </tbody>
+      </table>
+
+      <p id="noResults" class="no-results" style="display:none;">No se encontraron resultados.</p>
+    </div>
+  </main>
+
+  <footer>
+     <p>Con tu ayuda podemos hacer el repositorio mejor. Reporta bugs o envía sugerencias a: repositorio.lad@gmail.com</p>
+  </footer>
+
+  <script src="fetch.js"></script> <!-- mantiene la protección / logout -->
+  <script>
+    //filter
+    (function(){
+      const input = document.getElementById('search');
+      const table = document.getElementById('shortcutsTable');
+      const rows = table ? table.tBodies[0].rows : [];
+      const noResults = document.getElementById('noResults');
+
+      function filtrar() {
+        const q = input.value.trim().toLowerCase();
+        let visibles = 0;
+
+        for (let r of rows) {
+          const text = r.textContent.toLowerCase();
+          if (!q || text.includes(q)) {
+            r.style.display = '';
+            visibles++;
+          } else {
+            r.style.display = 'none';
+          }
+        }
+
+        noResults.style.display = visibles ? 'none' : 'block';
+      }
+
+      if (input) {
+        input.addEventListener('input', filtrar);
+        //ESC clean 
+        input.addEventListener('keydown', function(e){
+          if (e.key === 'Escape') {
+            input.value = '';
+            filtrar();
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -16,22 +16,21 @@ header h1 {
   margin: 0;
 }
 
-.page img{
-  width: 350px;
+.page img {
+  width: 21.875rem; /* antes 350px */
   height: auto;
   display: block;
   margin: 0;
 }
 
-
-nav a {
+nav a, .dropBtn {
   font-size: 1.25rem;
   color: black;
   margin-right: 1rem;
   text-decoration: none;
 }
 
-nav a:hover {
+nav a:hover, .dropBtn:hover {
   color: rgb(71, 83, 104);
 }
 
@@ -40,18 +39,19 @@ main {
 }
 
 footer {
-  background: #1e3a8a;
+  background: black;
   color: white;
   text-align: center;
   padding: 1rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 /* Login overlay */
 #login {
   position: fixed;
   top: 0; left: 0;
-  width: 100%; height: 100%;
+  width: 100%; 
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,68 +60,136 @@ footer {
 
 .login-box {
   background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  padding: 1.25rem; /* antes 20px */
+  border-radius: 0.75rem; /* antes 12px */
+  box-shadow: 0 0.25rem 0.625rem rgba(0,0,0,0.2); /* antes 0 4px 10px */
   text-align: center;
 }
 
 .login-box img {
-  width: 350px;
+  width: 21.875rem; /* antes 350px */
   height: auto;
   display: block;
   margin: 0 auto;
 }
 
 input {
-  padding: 10px;
-  margin: 10px 0;
-  width: 200px;
+  padding: 0.625rem; /* antes 10px */
+  margin: 0.625rem 0; /* antes 10px */
+  width: 12.5rem; /* antes 200px */
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 0.375rem; /* antes 6px */
 }
 
 button {
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem; /* antes 10px 20px */
   border: none;
   background: #4CAF50;
   color: white;
-  border-radius: 6px;
+  border-radius: 0.375rem; /* antes 6px */
   cursor: pointer;
 }
 
 .error {
   color: red;
-  margin-top: 10px;
+  margin-top: 0.625rem; /* antes 10px */
 }
 
-.drop{
+.drop {
   position: relative;
   display: inline-block;
 }
 
-.dropCnt{
+.dropCnt {
   display: none;
   position: absolute;
   background-color: white;
-  min-width: 150px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  min-width: 9.375rem; /* antes 150px */
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2); /* antes 0px 8px 16px */
   z-index: 1;
 }
 
-
-.dropCnt a{
+.dropCnt a {
   display: block;
-  padding: 10px;
+  padding: 0.625rem; /* antes 10px */
   color: #333;
   text-decoration: none;
 }
 
-.dropCnt a:hover{
+.dropCnt a:hover {
   background-color: #ddd;
 }
 
-.drop:hover .dropCnt{
+.drop:hover .dropCnt {
   display: block;
 }
 
+/* ---- buscador y tabla de atajos ---- */
+.guide-controls {
+  margin: 1rem 0 1.25rem 0;
+}
+
+#search {
+  width: 100%;
+  max-width: 32.5rem; /* antes 520px */
+  padding: 0.625rem 0.75rem; /* antes 10px 12px */
+  border-radius: 0.5rem; /* antes 8px */
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-shadow: none;
+  outline: none;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.guides-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.guides-table th,
+.guides-table td {
+  padding: 0.625rem 0.75rem; /* antes 10px 12px */
+  border: 1px solid #e6e6e6;
+  text-align: left;
+}
+
+.guides-table thead th {
+  background: #f2f4f7;
+  color: #222;
+  font-weight: 600;
+}
+
+.guides-table tbody tr:nth-child(odd) {
+  background: #fafafa;
+}
+
+.no-results {
+  color: #666;
+  font-style: italic;
+}
+
+/* Header top: logo y logout */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 0.625rem 0; /* antes 10px 0 */
+}
+
+.logo {
+  height: 4rem; /* antes 60px */
+}
+
+.logout img {
+  height: 2.5rem; 
+  cursor: pointer;
+}
+
+.main-nav {
+  margin-top: 0.3125rem; /* antes 5px */
+}

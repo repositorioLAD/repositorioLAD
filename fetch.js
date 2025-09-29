@@ -1,95 +1,75 @@
-const numMap = { 
-  "6": "4", "4": "6", 
-  "2": "8", "8": "2", 
-  "7": "3", "3": "7", 
-  "9": "1", "1": "9", 
-  "5": "0", "0": "5" 
-};
-
-const alphabet = "abcdefghijklmnopqrstuvwxyz";
-
 //transform
 function transformar(key) {
   key = key.toLowerCase().trim();
-  if (key.length < 3) return "";
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-  let salida = [];
+  //part1
+  const letras1 = key.slice(0, 3).split("");
+  const parte1 = letras1.map(l => alphabet.indexOf(l) + 1).join("");
 
-  //letrado
-  let primerLetra = key[0];
-  let tercerNum = parseInt(key[3]);
-  if (isNaN(tercerNum)) tercerNum = 0;
-
-  if (/[a-z]/.test(primerLetra)) {
-    let base = alphabet.indexOf(primerLetra);
-    let nuevaPos = (base + tercerNum) % 26;
-    salida.push(alphabet[nuevaPos]);
-  } else {
-    salida.push(primerLetra);
+  //part2
+  const letras2 = key.slice(3, 6).split("");
+  let parte2 = "";
+  for (let l of letras2) {
+    const idx = alphabet.indexOf(l);
+    const anterior = alphabet[(idx - 1 + 26) % 26];
+    const siguiente = alphabet[(idx + 1) % 26];
+    parte2 += anterior + siguiente; 
   }
 
-  //numerico
-  for (let i = 1; i < key.length; i++) {
-    let ch = key[i];
-    salida.push(numMap[ch] || ch);
-  }
+  //part3
+  const letras3 = key.slice(6).split("");
+  const parte3 = letras3.map(l => 64 - (alphabet.indexOf(l) + 1)).join("");
 
-  return salida.join("");
+  //part4
+  const ultimo = parte3[parte3.length - 1];
+  const div7 = Math.floor(parseInt(ultimo) / 7);
+
+  return parte1 + parte2 + parte3 + div7;
 }
 
 //login
-async function verificar() {
+function verificar() {
   const key = document.getElementById("key").value;
   const mensaje = document.getElementById("mensaje");
 
-  try {
-    const resp = await fetch("keys.json");
-    const data = await resp.json();
-    const validas = data.keys.map(m => m.toLowerCase());
 
-    const ofuscada = transformar(key);
+  const dermWord1 = "741zbkmtv5150491";
+  const transformada = transformar(key);
 
-    if (validas.includes(ofuscada)) {
-      localStorage.setItem("logeado", "true");
-      window.location.href = "menu.html";
-    } else {
-      mensaje.textContent = "Acceso denegado";
-    }
-  } catch (err) {
-    mensaje.textContent = "Error cargando datos";
-    console.error(err);
+  if (transformada === dermWord1) {
+    localStorage.setItem("logeado", "true");
+    window.location.href = "menu.html";
+  } else {
+    mensaje.textContent = "Acceso denegado";
   }
 }
 
-// Proteger todas las páginas excepto index.html
+//keyed
 window.onload = function () {
-    const actual = window.location.pathname.split("/").pop();
+  const actual = window.location.pathname.split("/").pop();
 
-    // proteger páginas
-    if (actual !== "index.html") {
-        if (localStorage.getItem("logeado") !== "true") {
-            window.location.href = "index.html";
-        }
+  if (actual !== "index.html") {
+    if (localStorage.getItem("logeado") !== "true") {
+      window.location.href = "index.html";
     }
+  }
 
-    // enter en el login
-    if (actual === "index.html") {
-        const input = document.getElementById("key");
-        if (input) {
-            input.addEventListener("keypress", function (event) {
-                if (event.key === "Enter") {
-                    event.preventDefault();
-                    verificar();
-                }
-            });
+  if (actual === "index.html") {
+    const input = document.getElementById("key");
+    if (input) {
+      input.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          verificar();
         }
+      });
     }
+  }
 };
 
-
-//logout
+//deleted keyed
 function logout() {
   localStorage.removeItem("logeado");
   window.location.href = "index.html";
 }
-

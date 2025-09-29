@@ -8,23 +8,33 @@
 </head>
 <body>
   <header>
-    <div class="page">
+    <div class="header-top">
       <a href="menu.html">
-        <img src="images/rl_logo.png" alt="Repositorio LAD GDL">
+        <img src="images/rl_logo.png" alt="Repositorio LAD GDL" class="logo">
       </a>
-      <nav>
-        <div class="drop">
-          <a href="about.html" class="dropBtn"> Tutoriales</a>
-          <div class="dropCnt">
-            <a href="aboutMaya.html">Maya</a>
-          </div>
-        </div>
-        <a href="contact.html">Contacto</a>
-        <a href="#" onclick="logout()">Salir</a>
-      </nav>
-
+      <a href="#" onclick="logout()" class="logout">
+        <img src="images/salirIcon.png" alt="Salir">
+      </a>
     </div>
+
+    <nav class="main-nav">
+      <div class="drop">
+        <a href="#" class="dropBtn">Tutoriales</a>
+        <div class="dropCnt">
+          <a href="aboutMaya.html">Maya</a>
+        </div>
+      </div>
+      <a href="contact.html">Contacto</a>
+      <div class="drop">
+        <a href="#" class="dropBtn">Guías</a>
+        <div class="dropCnt">
+          <a href="guidesMaya.html">Maya</a>
+        </div>
+      </div>
+    </nav>
   </header>
+
+
 
   <main>
     <h2>Bienvenido al menú principal</h2>
@@ -32,7 +42,7 @@
   </main>
 
   <footer>
-    <p>&copy; Repositorio LAD</p>
+    <p>Con tu ayuda podemos hacer el repositorio mejor. Reporta bugs o envía sugerencias a: repositorio.lad@gmail.com</p>
   </footer>
 
   <script src="fetch.js"></script>
