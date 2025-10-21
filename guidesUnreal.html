@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atajos de Unreal Engine</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/icon.ico" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <a href="menu.html">
+        <img src="images/rl_logo.png" alt="Repositorio LAD GDL" class="logo">
+      </a>
+      <nav class="main-nav">
+        <div class="drop">
+          <a href="#" class="dropBtn">Tutoriales</a>
+          <div class="dropCnt">
+            <a href="aboutMaya.html">Maya</a>
+            <a href="aboutUnreal.html">Unreal</a>
+          </div>
+        </div>
+        <div class="drop">
+          <a href="#" class="dropBtn">Atajos</a>
+          <div class="dropCnt">
+            <a href="guidesMaya.html">Maya</a>
+            <a href="guidesUnreal.html">Unreal</a>
+          </div>
+        </div>
+        <a href="spotlight.html">Spotlight</a>
+        <a href="contact.html">Contacto</a>
+      </nav>
+      <a href="#" onclick="logout()" class="logout"></a>
+    </div>
+  </header>
+
+  <main>
+    <h2>Unreal Engine</h2>
+
+    <div class="guide-controls">
+      <label for="search" class="sr-only"></label>
+      <input id="search" type="search" placeholder="Barra de búsqueda (busca palabras clave: graph editor, F2, fin)" autocomplete="off">
+    </div>
+    
+
+    <div class="table-wrap">
+      <table id="shortcutsTable" class="guides-table">
+        <thead>
+          <tr>
+            <th>Atajo</th>
+            <th>Función</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Ctrl + barra espaciadora</td><td>Alternar el abrir y cerrar del cajón de contenido (content drawer)</td></tr>
+          <tr><td>F2</td><td>Renombrar objeto seleccionado</td></tr>
+          <tr><td>F11</td><td>Ejecuta tu escena actual en pantalla completa (play on fullscreen)</td></tr>
+          <tr><td>Alt + P</td><td>Ejecuta tu escena actual (play)</td></tr>
+          <tr><td>Alt + S</td><td>Simula tu escena actual (simulate)</td></tr>
+          <tr><td>Ctrl + O</td><td>Abre el nivel seleccionado (open)</td></tr>
+          <tr><td>Click izquierdo + WASD (viewport)</td><td>Desplazarte en la vista principal (viewport) equivalente a las flechas direccionales</td></tr>
+          <tr><td>Click izquierdo + E (viewport)</td><td>Desplazarte hacia arriba en la vista principal (viewport)</td></tr>
+          <tr><td>Click izquierdo + Q (viewport)</td><td>Desplazarte hacia abajo en la vista principal (viewport)</td></tr>
+          <tr><td>Ctrl + D (viewport)</td><td>Crear duplicado del objeto seleccionado</td></tr>
+          <tr><td>Ctrl + G (viewport)</td><td>Agrupa los objetos seleccionados</td></tr>
+          <tr><td>Shift + G (viewport)</td><td>Desagrupa el grupo seleccionado</td></tr>
+          <tr><td>W (viewport)</td><td>Movimiento del objeto seleccionado (translate)</td></tr>
+          <tr><td>E (viewport)</td><td>Rotación del objeto seleccionado (rotate)</td></tr>
+          <tr><td>R (viewport)</td><td>Escalar el objeto seleccionado (scale)</td></tr>
+          <tr><td>Barra espaciadora (viewport)</td><td>Alternar entre los modos de transformación en un objeto seleccionado; mover, rotar y escalar</td></tr>
+          <tr><td>Fin (viewport)</td><td>Alinear objeto seleccionado al suelo (snap to floor)</td></tr>
+          <tr><td>F (viewport)</td><td>Enfoca en el objeto seleccionado (focus)</td></tr>
+          <tr><td>G (viewport)</td><td>Alterna la visibilidad de; cuadrículas, pivotes, contornos e íconos</td></tr>
+          <tr><td>T (viewport)</td><td>Alterna la selección de objetos transparentes, poder o no poder seleccionar a través de estos</td></tr>
+          <tr><td>P (viewport)</td><td>Alterna la visibilidad de la navegación o caminos (navigation / path finding for AI)</td></tr>
+          <tr><td>Alt + G (viewport)</td><td>Establece la vista de perspectiva en la vista principal (perspective view)</td></tr>
+          <tr><td>Alt + K (viewport)</td><td>Establece la vista lateral en la vista principal (side view)</td></tr>
+          <tr><td>Alt + H (viewport)</td><td>Establece la vista cenital en la vista principal (top view)</td></tr>
+          <tr><td>Alt + J (viewport)</td><td>Establece la vista frontal en la vista principal (front view)</td></tr>
+          <tr><td>Click izquierdo (graph editor)</td><td>Despliega el buscador de nodos (context menu)</td></tr>
+          <tr><td>Click izquierdo + arrastrar (graph editor)</td><td>Desplazamiento en el editor de gráficos (graph editor)</td></tr>
+          <tr><td>Click + 1 (graph editor)</td><td>Crea un parámetro de tipo float de un solo valor</td></tr>
+          <tr><td>Click + 2 (graph editor)</td><td>Crea un parámetro de tipo float de dos valores</td></tr>
+          <tr><td>Click + 3 (graph editor)</td><td>Crea un parámetro de tipo vector de tres valores</td></tr>
+          <tr><td>Click + B (graph editor)</td><td>Crea un nodo de ramificación (branch if statement)</td></tr>
+          <tr><td>Click + Alt (graph editor)</td><td>Desconecta todos los nodos conectados sobre el nodo donde se hace el click</td></tr>    
+        </tbody>
+      </table>
+
+      <p id="noResults" class="no-results" style="display:none;">No se encontraron resultados.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>Contribuyentes: Jorge Alfonso</p>
+    <p>Con tu ayuda podemos hacer el repositorio mejor. Reporta bugs o envía sugerencias a:  <a href="mailto:repositorio.lad@gmail.com">repositorio.lad@gmail.com</a></p>
+  </footer>
+
+  <script src="fetch.js"></script> <!-- mantiene la protección / logout -->
+  <script>
+    //filter
+    (function(){
+      const input = document.getElementById('search');
+      const table = document.getElementById('shortcutsTable');
+      const rows = table ? table.tBodies[0].rows : [];
+      const noResults = document.getElementById('noResults');
+
+      function filtrar() {
+        const q = input.value.trim().toLowerCase();
+        let visibles = 0;
+
+        for (let r of rows) {
+          const text = r.textContent.toLowerCase();
+          if (!q || text.includes(q)) {
+            r.style.display = '';
+            visibles++;
+          } else {
+            r.style.display = 'none';
+          }
+        }
+
+        noResults.style.display = visibles ? 'none' : 'block';
+      }
+
+      if (input) {
+        input.addEventListener('input', filtrar);
+        //ESC clean 
+        input.addEventListener('keydown', function(e){
+          if (e.key === 'Escape') {
+            input.value = '';
+            filtrar();
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
