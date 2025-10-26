@@ -4,21 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Atajos de Autodesk Maya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="images/icon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
     <div class="header-top">
-      <a href="menu.html">
-        <img src="images/rl_logo.png" alt="Repositorio LAD GDL" class="logo">
-      </a>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
       <nav class="main-nav">
+        <a href="menu.html" class="menu">Inicio</a>
         <div class="drop">
           <a href="#" class="dropBtn">Tutoriales</a>
           <div class="dropCnt">
             <a href="aboutMaya.html">Maya</a>
-            <a href="aboutUnreal.html">Unreal</a>
           </div>
         </div>
         <div class="drop">
@@ -30,14 +32,13 @@
         </div>
         <a href="spotlight.html">Spotlight</a>
         <a href="contact.html">Contacto</a>
+        <a href="#" onclick="logout()" class="logout">Salir</a>
       </nav>
-      <a href="#" onclick="logout()" class="logout"></a>
     </div>
   </header>
-
+  
   <main>
-    <h2>Autodesk Maya</h2>
-
+    <h1>Atajos de Autodesk Maya</h1>
     <div class="guide-controls">
       <label for="search" class="sr-only"></label>
       <input id="search" type="search" placeholder="Barra de búsqueda (busca palabras clave: shift, selección, F8)" autocomplete="off">

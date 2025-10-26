@@ -3,26 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menú</title>
+  <title>Inicio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="images/icon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
     <div class="header-top">
-      <a href="menu.html">
-        <img src="images/rl_logo.png" alt="Repositorio LAD GDL" class="logo">
-      </a>
       <nav class="main-nav">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <a href="menu.html" class="menu">Inicio</a>
         <div class="drop">
-          <a href="#" class="dropBtn">Tutoriales</a>
+          <input type="checkbox" id="tutoriales-toggle" style="display:none;">
+          <label for="tutoriales-toggle" class="dropBtn">Tutoriales</label>
           <div class="dropCnt">
             <a href="aboutMaya.html">Maya</a>
-            <a href="aboutUnreal.html">Unreal</a>
           </div>
         </div>
         <div class="drop">
-          <a href="#" class="dropBtn">Atajos</a>
+          <input type="checkbox" id="tutoriales-toggle" style="display:none;">
+          <label for="tutoriales-toggle" class="dropBtn">Atajos</label>
           <div class="dropCnt">
             <a href="guidesMaya.html">Maya</a>
             <a href="guidesUnreal.html">Unreal</a>
@@ -30,29 +34,52 @@
         </div>
         <a href="spotlight.html">Spotlight</a>
         <a href="contact.html">Contacto</a>
+        <a href="#" onclick="logout()" class="logout">Salir</a>
       </nav>
-      <a href="#" onclick="logout()" class="logout"></a>
     </div>
   </header>
 
   <main>
-    <img src="images/rl_enUnLugar.png" alt="LAD GDL en un solo lugar" class="titleImages">
-    <p>
-      ¿Se interrumpe tu flujo de trabajo porque no encuentras lo que necesitas? ¿Cuánto tiempo pierdes buscando en youtube, peleandote con IA para que al final te de una respuesta incorrecta o leyendo páginas y páginas de documentación? Todo esto y más en el Repositorio LAD GDL.
-    </p>
-    <p>
-      Este repositorio es un esfuerzo colectivo creado por estudiantes para estudiantes, con el objetivo de centralizar en un solo lugar todo lo relacionado con el aprendizaje y la práctica de nuestras disciplinas. Aquí encontrarás información útil, tutoriales, guías, atajos y proyectos estudiantiles de distintas generaciones.  
-    </p>
-    <p>
-      La intención es que el repositorio sea un espacio en constante crecimiento: desde making offs y cortometrajes, hasta proyectos externos que busquen visibilidad.  
-    </p>
-    <p>
-      Queremos fomentar la transmisión de conocimiento entre generaciones, ofreciendo a todos la oportunidad de contribuir. Puedes aportar desde tus atajos y técnicas, hasta postular tus propios proyectos para formar parte del Spotlight.  
-      Si tienes ideas de proyectos que podrían beneficiarse de estar en esta plataforma, no dudes en contactarnos. Cualquier LAD es bienvenido a sumar su conocimiento y experiencia para hacer de este repositorio un recurso cada vez más completo y valioso para la comunidad LAD GDL.
-    </p>
-    <p>
-      Esta página se encuentra actualmente en proceso de construcción, pero conforme pase el tiempo irán encontrando más tutoriales, guías, recursos y más por venir... Además, en la sección de contacto se encuentra la información de los asesores de cátedra y de la coordinadora académica, para cualquier consulta o seguimiento que necesiten. ¡Estamos trabajando para ofrecerles cada vez más contenido y herramientas que les sean de utilidad!
-    </p>
+    <div class="megaFlex">
+      <img src="images/ext_whiteSimpleLAD_lgo.png" alt="No se encontró la imagen, favor de reportar el error" class="adjustedImage">
+      <h1 class="megaTitle">
+        EN UN SOLO LUGAR
+        <p class="megaText">
+          <span style="font-weight:400"> Encuentra todo lo que necesitas en el <span style="color:white; font-weight:700;">repoLAD GDL</span>. No pierdas tiempo buscando información; tutoriales, atajos, talleres, guías, y proyectos destacados.</span>  
+        </p>
+      </h1>
+    </div>
+   
+    <div class="pFlexRight">
+      <!--<img src="images/coyote.gif" 
+      alt="No se encontró la imagen, favor de reportar el error" 
+      style="width:30rem; height:auto; float:right; margin:1rem 0rem 1rem 1rem;">-->
+      <p>
+        Este repositorio es un esfuerzo colectivo creado <span style="font-weight: 700">por estudiantes para estudiantes</span>,
+        con el objetivo de centralizar en un solo lugar todo lo relacionado con el aprendizaje y 
+        la práctica de nuestras disciplinas. Aquí encontrarás información útil, tutoriales, guías, 
+        atajos y proyectos estudiantiles de distintas generaciones.
+      </p>
+      <p>
+        La intención es que el repositorio sea un espacio en constante crecimiento: desde making offs y cortometrajes, hasta proyectos externos que busquen visibilidad.  
+      </p>
+      <p>
+        Queremos fomentar la transmisión de conocimiento entre generaciones, ofreciendo a todos la oportunidad de contribuir. Puedes aportar desde tus atajos y técnicas, hasta postular tus propios proyectos para formar parte del Spotlight.  
+        Si tienes ideas de proyectos que podrían beneficiarse de estar en esta plataforma, no dudes en contactarnos. Cualquier LAD es bienvenido a sumar su conocimiento y experiencia para hacer de este repositorio un recurso cada vez más completo y valioso para la comunidad LAD GDL.
+      </p>
+    </div>
+   
+    <div class="pFlexLeft">
+      <!--<img src="images/coyote.gif" 
+      alt="No se encontró la imagen, favor de reportar el error" 
+      style="width:30rem; height:auto; float:left; margin:1rem 1rem 1rem 0rem;">-->
+      <p>
+        Esta página se encuentra actualmente en proceso de construcción, pero conforme pase el tiempo irán encontrando más tutoriales, guías, recursos y más por venir... Además, en la sección de contacto se encuentra la información de los asesores de cátedra y de la coordinadora académica, para cualquier consulta o seguimiento que necesiten. ¡Estamos trabajando para ofrecerles cada vez más contenido y herramientas que les sean de utilidad!
+      </p>
+
+    </div>
+    
+   
 
     <h2>Novedades</h2>
     <p>

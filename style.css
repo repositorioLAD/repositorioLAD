@@ -1,72 +1,4 @@
-body {
-  font-family: "Arial Narrow", Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: white;
-  color: black;
-}
-
-header {
-  background: white;
-  color: white;
-  
-}
-
-.header-top {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; 
-  padding: 1rem 2rem 0rem 2rem;
-}
-
-.main-nav {
-  padding: 0rem 2rem 1rem 2rem;
-}
-
-
-.page img {
-  width: 21.875rem; 
-  height: auto;
-  display: block;
-  margin: 0;
-}
-
-nav a, .dropBtn {
-  font-size: 1.5rem;
-  color: black;
-  margin-right: 1rem;
-  text-decoration: none;
-}
-
-nav a:hover, .dropBtn:hover {
-  color: rgb(203, 147, 224);
-}
-
-main {
-  padding: 0rem 2rem 0rem 2rem;
-  text-align: left; 
-  color: rgb(43, 43, 43);
-}
-
-h2 {
-  margin-bottom: 0;
-}
-
-main p {
-  font-size: 1.125rem;      
-  line-height: 1.5;          
-}
-
-footer {
-  font-size: 1rem;
-  background: black;
-  color: white;
-  text-align: center;
-  padding: 0.2rem;
-  
-}
-
-/* Login overlay */
+/*index*/
 #login {
   position: fixed;
   top: 0; left: 0;
@@ -75,15 +7,16 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0,0,0,0.6);
+  background: #191919;
 }
 
 .login-box {
-  background: white;
+  background: #d9d9d9;
   padding: 1.25rem; 
-  border-radius: 0.75rem; 
-  box-shadow: 0 0.25rem 0.625rem rgba(0,0,0,0.2); 
+  border-radius: 5rem; 
+  box-shadow: 0 0.5rem 0.625rem black; 
   text-align: center;
+  
 }
 
 .login-box img {
@@ -94,38 +27,124 @@ footer {
 }
 
 input {
+  background: #d9d9d9;
+  color: #272727;
   padding: 0.625rem;
   margin: 0.625rem 0; 
   width: 12.5rem; 
-  border: 1px solid #ccc;
-  border-radius: 0.375rem; 
+  border-radius: 1.5rem; 
+  font-family: "DM Sans", Arial, sans-serif;
 }
 
 button {
+  font-family: "DM Sans", Arial, sans-serif;
   padding: 0.625rem 1.25rem;
   border: none;
-  background: #4CAF50;
-  color: white;
-  border-radius: 0.375rem;
+  background: #e2a9f1;
+  color: black; /*text color*/
+  border-radius: 1.5rem;
   cursor: pointer;
 }
 
 .error {
+  font-family: "DM Sans", Arial, sans-serif;
   color: red;
   margin-top: 0.625rem; 
 }
 
+/*main nav header*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #191919; 
+ 
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  padding: 0 2rem 0rem 2rem;
+}
+
+.menu{
+  background-color: #e2a9f1;
+  border-radius: 5rem; 
+  box-shadow: 0 0.5rem 0.625rem black; 
+  padding: .8rem;
+  color: #191919;
+  font-size: 1.2rem;
+}
+
+.menu:hover{
+  background-color: #ffffff;
+  border-radius: 5rem; 
+  box-shadow: 0 0.5rem 0.625rem black; 
+  padding: 1rem;
+  color: #191919;
+  font-size: 1.4rem;
+}
+
+
+/*other pages headers*/
+.main-nav {
+  padding: 0rem 2rem 0rem 2rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+nav a, .dropBtn {
+  font-size: 1.2rem;
+  color: #d9d9d9;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+nav a:hover, .dropBtn:hover {
+  color: #e2a9f1;
+  font-size: 1.4rem;
+}
+
+/*logout button*/
+.logout {
+  margin-left: auto;
+  cursor: pointer;
+  background-color: #d9d9d9;
+   border-radius: 5rem; 
+  box-shadow: 0 0.5rem 0.625rem black; 
+  padding: .8rem;
+  color: #191919;
+}
+
+.logout:hover {
+  margin-left: auto;
+  cursor: pointer;
+  background-color: #fff789;
+  border-radius: 5rem; 
+  box-shadow: 0 0.5rem 0.625rem black; 
+  padding: .8rem;
+  color: #191919;
+}
+
+
+/*dropDown buttons*/
 .drop {
   position: relative;
   display: inline-block;
+  text-align: center;
 }
 
 .dropCnt {
   display: none;
   position: absolute;
-  background-color: white;
+  background-color: #d9d9d9;
+  border-radius: 5rem;
   min-width: 9.375rem; 
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2); 
+  box-shadow: 0 0.5rem 1rem #191919; 
   z-index: 1;
 }
 
@@ -137,12 +156,72 @@ button {
 }
 
 .dropCnt a:hover {
-  background-color: #ddd;
+  background-color: #191919;
+  border-radius:4rem;
 }
 
 .drop:hover .dropCnt {
-  display: block;
+  display: flex;
 }
+
+/*headers*/
+h1 {
+  color: white;
+  margin-bottom: 0;
+}
+
+h2 {
+  margin-bottom: 0;
+}
+
+.page img {
+  width: 21.875rem; 
+  height: auto;
+  display: block;
+  margin: 0;
+}
+
+
+/*content*/
+body {
+  font-family: "DM Sans", sans-serif; /*font for all*/
+  margin: 0;
+  padding-top: 5rem;
+  background: #272727;
+}
+
+/*main body text*/
+main {
+  padding: 0rem 3.5rem 0rem 3.5rem;
+  text-align: left; 
+  color: #d9d9d9;
+  
+}
+
+/*paragraphs*/
+main p {
+  font-size: 1rem;      
+  line-height: 1.4;       
+}
+
+.pFlexRight{
+  padding-top: 5rem;
+}
+
+.pFlexLeft{
+  padding-top: 5rem;
+}
+
+/*bottom information*/
+footer {
+  font-size: 1rem;
+  background: #191919;
+  color: #d9d9d9;
+  text-align: center;
+  padding: 0.2rem;
+}
+
+
 
 .guide-controls {
   margin: 1rem 0 1.25rem 0;
@@ -152,8 +231,8 @@ button {
   width: 100%;
   max-width: 32.5rem; 
   padding: 0.625rem 0.75rem; 
-  border-radius: 0.5rem; 
-  border: 1px solid #ccc;
+  border-radius: 5rem; 
+  border: 1px solid #d9d9d9;
   font-size: 1rem;
   box-shadow: none;
   outline: none;
@@ -173,45 +252,24 @@ button {
 .guides-table th,
 .guides-table td {
   padding: 0.625rem 0.75rem; 
-  border: 1px solid #e6e6e6;
+  border: 1px solid white;
   text-align: left;
 }
 
 .guides-table thead th {
-  background: #f2f4f7;
-  color: #222;
+  background: #191919;
+  color: #d9d9d9;
   font-weight: 600;
 }
 
 .guides-table tbody tr:nth-child(odd) {
-  background: #fafafa;
+  background: #191919;
+  color: #d9d9d9;
 }
 
 .no-results {
-  color: #666;
+  color: #9b9b9b;
   font-style: italic;
-}
-
-
-.logo {
-  height: 5rem; 
-}
-
-
-.logout {
-  margin-left: auto;
-  display: block;
-  width: 2rem;
-  height: 2rem;
-  background-image: url("images/salirIcon.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: pointer;
-}
-
-.logout:hover {
-  background-image: url("images/salirIconHover.png"); 
 }
 
 .titleImages {
@@ -265,3 +323,155 @@ footer a:visited {
   color:rgb(201, 101, 238);
 }
 
+/*mega*/
+.megaFlex{
+  display: flex;
+  align-items: center;
+  gap: 0rem;
+  text-align: right;
+}
+
+.adjustedImage {
+  float: left; /*side to float on*/
+  width: 35rem; 
+}
+
+.megaTitle{
+  font-size: 4.2rem;
+  font-weight: 700; /*bold*/
+  padding-top: 12rem;
+}
+
+.megaText{
+  color: #d9d9d9;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 0%;
+}
+
+
+
+/* mobile responsive*/
+@media (max-width: 1024px) {
+  body {
+    font-size: 0.95rem;
+    padding-top: 0rem;
+  }
+
+
+  .megaTitle{
+    font-size: 4.2rem;
+    font-weight: 700; /*bold*/
+    padding-top: 0rem;
+  }
+
+}
+
+/* 📱 Pantallas de teléfono */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
+    padding-top: 4rem;
+  }
+
+  .megaFlex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .megaTitle {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .megaText {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .adjustedImage {
+    float: none;
+    width: 100%;
+    max-width: 30rem;
+    height: auto;
+    margin: 0 auto;
+    padding: 8rem 0 0 0;
+    margin-bottom: 0%;
+  }
+
+  .videos-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  iframe {
+    height: 55vw; /* mantiene proporción de video */
+  }
+
+  footer {
+    padding: 1rem;
+    text-align: center;
+  }
+}
+
+/*hamburger*/
+
+/* Oculta el checkbox real */
+#menu-toggle {
+  display: none;
+}
+
+/* Ícono del menú */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: #d9d9d9;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+/* Muestra menú hamburguesa solo en pantallas pequeñas */
+@media (max-width: 1024px) {
+  .menu-icon {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Oculta los links cuando el menú está cerrado */
+  .main-nav a,
+  .main-nav .drop {
+    display: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Cuando el checkbox está marcado, se muestran los links */
+  #menu-toggle:checked ~ a,
+  #menu-toggle:checked ~ .drop {
+    display: block;
+  }
+
+  .main-nav {
+    flex-direction: column; /* vertical en móvil */
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+  }
+
+}
+
+/* Hover para desktop */
+@media (min-width: 769px) {
+  .drop:hover .dropCnt {
+    display: flex;
+  }
+}
+
+/* Click/tap para móvil */
+@media (max-width: 768px) {
+  .drop input:checked + .dropCnt {
+    display: flex;
+  }
+}
