@@ -136,6 +136,7 @@ nav a:hover, .dropBtn:hover {
   position: relative;
   display: inline-block;
   text-align: center;
+  
 }
 
 .dropCnt {
@@ -347,6 +348,22 @@ footer a:visited {
   font-size: 1.3rem;
   font-weight: 700;
   margin-top: 0%;
+  padding-bottom: 3rem;
+}
+
+/*alterations*/
+.biggerP{
+  font-size: 1.4rem;
+  padding: 4rem 0 4rem 0;
+}
+
+.biggerFollowed{
+  font-size: 1.4rem;
+  padding-bottom: 2rem;
+}
+
+.normalParagraph{
+  padding: 1.5rem 0 1.5rem;
 }
 
 
@@ -431,47 +448,137 @@ footer a:visited {
   margin-right: 1rem;
 }
 
-/* Muestra menú hamburguesa solo en pantallas pequeñas */
+/*tablet, small computer*/
 @media (max-width: 1024px) {
   .menu-icon {
-    display: block;
+    display: inline-block;
     font-size: 2rem;
     cursor: pointer;
     margin-bottom: 0.5rem;
   }
 
-  /* Oculta los links cuando el menú está cerrado */
+  #menu-toggle {
+  display: none;
+  }
+
+  /*hide when closed*/
   .main-nav a,
   .main-nav .drop {
     display: none;
     width: 100%;
-    text-align: center;
+    text-align: left;
   }
 
-  /* Cuando el checkbox está marcado, se muestran los links */
+
+  .menu{
+    background: none;
+    border-radius: 0rem; 
+    box-shadow: 0 0rem 0rem; 
+    padding: 0rem;
+    color: #e2a9f1;
+    font-size: 1.2rem;
+  }
+   
+  /*override  for hover too*/
+  .menu:hover{
+    background: none;
+    border-radius: 0rem; 
+    box-shadow: 0 0rem 0rem; 
+    padding: 0rem;
+    color: white;
+    font-size: 1.4rem;
+  }
+
+  .logout {
+  background: none;
+  border-radius: 0rem; 
+  box-shadow: 0 0rem 0rem; 
+  padding: 0rem;
+  color: #d9d9d9;
+  }
+
+  .logout:hover {
+    background: none;
+    border-radius: 0rem; 
+    box-shadow: 0 0rem 0rem; 
+    padding: 0rem;
+    font-size: 1.4;
+    color: #fff789;
+  }
+
+
+  /* menús verticales */
+  .main-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+  }
+
+  /* ocultar todo por defecto */
+  .main-nav > a,
+  .main-nav > .drop {
+    display: none;
+    width: 100%;
+  }
+
+  /* mostrar items cuando el menú hamburguesa está checkeado */
   #menu-toggle:checked ~ a,
   #menu-toggle:checked ~ .drop {
     display: block;
   }
 
-  .main-nav {
-    flex-direction: column; /* vertical en móvil */
-    align-items: flex-start;
-    padding: 0.5rem 1rem;
+  /* submenús */
+  .drop {
+    width: 100%;
+    margin-left: 0;
+    position: static; /* para que dropCnt se coloque debajo */
   }
 
-}
+  /* checkbox submenú oculto */
+  .submenu-toggle {
+    display: none;
+  }
 
-/* Hover para desktop */
-@media (min-width: 769px) {
-  .drop:hover .dropCnt {
+  /* botón submenú */
+  .dropBtn {
+    display: block;
+    padding: .5rem;
+    background: #333;
+    border-radius: .5rem;
+    color: #e2a9f1;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+  }
+
+  /* contenedor submenú */
+  .dropCnt {
+    display: none;
+    padding-left: 1rem;
+    background: #222;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  /* mostrar submenú cuando su checkbox está checkeado */
+  .submenu-toggle:checked + .dropBtn + .dropCnt {
     display: flex;
   }
+
+  /* links del submenú */
+  .dropCnt a {
+    display: block;
+    padding: .3rem 0;
+    color: #e2a9f1;
+    text-decoration: none;
+  }
+
 }
 
-/* Click/tap para móvil */
-@media (max-width: 768px) {
-  .drop input:checked + .dropCnt {
-    display: flex;
+
+@media (min-width: 1025px) {
+  .submenu-toggle {
+    display: none; /* para desktop */
   }
 }
+

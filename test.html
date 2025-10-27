@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menú hamburguesa + submenús</title>
+<style>
+body {
+  font-family: sans-serif;
+  background: #222;
+  color: white;
+  margin: 0;
+  padding: 1rem;
+}
+
+/* nav básico */
+nav {
+  background: #111;
+  padding: 1rem;
+  border-radius: .5rem;
+  display: none;
+}
+
+/* ocultar el checkbox del menú */
+#menu-toggle {
+  display: none;
+}
+
+/* ícono ☰ */
+.menu-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* items del menú: ocultos inicialmente */
+.menu-item,
+.dropdown {
+  display: none;
+  margin: .5rem 0;
+}
+
+.menu{
+    display: none;
+}
+
+/* cuando el menú está abierto */
+#menu-toggle:checked ~ .menu-item,
+#menu-toggle:checked ~ .dropdown {
+  display: block;
+}
+
+/* ========== SUBMENÚ ========== */
+.submenu-toggle {
+  display: none;
+}
+
+/* el botón de submenú */
+.dropBtn {
+  cursor: pointer;
+  display: block;
+  padding: .5rem;
+  background: #333;
+  border-radius: .3rem;
+}
+
+/* contenedor del submenú */
+.dropCnt {
+  display: none;
+  margin-left: 1rem;
+  background: #222;
+  padding: .3rem .5rem;
+  border-left: 2px solid #e2a9f1;
+}
+
+/* mostrar submenú al marcar checkbox */
+.submenu-toggle:checked + .dropBtn + .dropCnt {
+  display: block;
+}
+
+/* estilo de links */
+a {
+  color: #e2a9f1;
+  text-decoration: none;
+  display: block;
+  padding: .3rem 0;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <!-- botón hamburguesa -->
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon">&#9776; Menú</label>
+
+  <!-- items -->
+  <a href="#" class="menu-item">Inicio</a>
+
+  <div class="dropdown">
+    <input type="checkbox" id="tutoriales" class="submenu-toggle">
+    <label for="tutoriales" class="dropBtn">Tutoriales</label>
+    <div class="dropCnt">
+      <a href="aboutMaya.html">Maya</a>
+      <a href="#">Unreal</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <input type="checkbox" id="atajos" class="submenu-toggle">
+    <label for="atajos" class="dropBtn">Atajos</label>
+    <div class="dropCnt">
+      <a href="#">Maya</a>
+      <a href="#">Unreal</a>
+    </div>
+  </div>
+
+  <a href="#" class="menu-item">Contacto</a>
+</nav>
+
+</body>
+</html>
