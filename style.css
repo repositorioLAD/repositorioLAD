@@ -386,16 +386,21 @@ footer a:visited {
   text-align: left;
 }
 
-.contactParagraph h1{
-  padding-bottom: 0rem;
-  margin-bottom: 0;
+.contactParagraph h2{
+  color: white;
 }
 
-.contactParagraph p {
-  margin-top: 0;
+a {
+  color: rgb(203, 147, 224);
 }
 
+a:hover {
+  color:rgb(227, 202, 236);
+}
 
+a:visited {
+  color:rgb(201, 101, 238);
+}
 
 
 
@@ -615,10 +620,16 @@ footer a:visited {
     max-width: 22rem;
     height: auto;
     margin: 0 auto;
-    padding: 8rem 0 0 0;
+    padding-top: 2rem;
     margin-bottom: 0%;
   }
 
+  .contactParagraph{
+    padding-bottom: 2rem;
+    align-items: center;
+    gap: 0rem;
+    text-align: left;
+  }
   .right {
     float: none;
     width: 100%;
