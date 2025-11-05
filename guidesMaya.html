@@ -13,18 +13,20 @@
 <body>
   <header>
     <div class="header-top">
-      <input type="checkbox" id="menu-toggle">
-      <label for="menu-toggle" class="menu-icon">&#9776;</label>
       <nav class="main-nav">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
         <a href="menu.html" class="menu">Inicio</a>
         <div class="drop">
-          <a href="#" class="dropBtn">Tutoriales</a>
+          <input type="checkbox" id="tutorialesToggle" class="submenu-toggle">
+          <label for="tutorialesToggle" class="dropBtn">Tutoriales</label>
           <div class="dropCnt">
             <a href="aboutMaya.html">Maya</a>
           </div>
         </div>
         <div class="drop">
-          <a href="#" class="dropBtn">Atajos</a>
+          <input type="checkbox" id="atajosToggle" class="submenu-toggle">
+          <label for="atajosToggle" class="dropBtn">Atajos</label>
           <div class="dropCnt">
             <a href="guidesMaya.html">Maya</a>
             <a href="guidesUnreal.html">Unreal</a>

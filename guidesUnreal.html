@@ -13,18 +13,20 @@
 <body>
   <header>
     <div class="header-top">
-      <input type="checkbox" id="menu-toggle">
-      <label for="menu-toggle" class="menu-icon">&#9776;</label>
       <nav class="main-nav">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
         <a href="menu.html" class="menu">Inicio</a>
         <div class="drop">
-          <a href="#" class="dropBtn">Tutoriales</a>
+          <input type="checkbox" id="tutorialesToggle" class="submenu-toggle">
+          <label for="tutorialesToggle" class="dropBtn">Tutoriales</label>
           <div class="dropCnt">
             <a href="aboutMaya.html">Maya</a>
           </div>
         </div>
         <div class="drop">
-          <a href="#" class="dropBtn">Atajos</a>
+          <input type="checkbox" id="atajosToggle" class="submenu-toggle">
+          <label for="atajosToggle" class="dropBtn">Atajos</label>
           <div class="dropCnt">
             <a href="guidesMaya.html">Maya</a>
             <a href="guidesUnreal.html">Unreal</a>
@@ -56,38 +58,65 @@
         </thead>
         <tbody>
           <tr><td>Ctrl + barra espaciadora</td><td>Alternar el abrir y cerrar del cajón de contenido (content drawer)</td></tr>
+          <tr><td>F1</td><td>Abre la documentación oficial de Unreal Engine en una página web</td></tr>
           <tr><td>F2</td><td>Renombrar objeto seleccionado</td></tr>
-          <tr><td>F11</td><td>Ejecuta tu escena actual en pantalla completa (play on fullscreen)</td></tr>
+
           <tr><td>Alt + P</td><td>Ejecuta tu escena actual (play)</td></tr>
-          <tr><td>Alt + S</td><td>Simula tu escena actual (simulate)</td></tr>
-          <tr><td>Ctrl + O</td><td>Abre el nivel seleccionado (open)</td></tr>
-          <tr><td>Click izquierdo + WASD (viewport)</td><td>Desplazarte en la vista principal (viewport) equivalente a las flechas direccionales</td></tr>
-          <tr><td>Click izquierdo + E (viewport)</td><td>Desplazarte hacia arriba en la vista principal (viewport)</td></tr>
-          <tr><td>Click izquierdo + Q (viewport)</td><td>Desplazarte hacia abajo en la vista principal (viewport)</td></tr>
+          <tr><td>Alt + S</td><td>Ejecuta tu escena actual (simulate)</td></tr>
+          <tr><td>Ctrl + O</td><td>Abre otra ventana y se abre el nivel seleccionado (open level)</td></tr>
+
+          <tr><td>Click derecho + WASD (viewport)</td><td>Desplazarte en la vista principal (viewport), equivalente a las flechas direccionales</td></tr>
+          <tr><td>Click derecho + E (viewport)</td><td>Desplazarte hacia arriba en la vista principal (viewport)</td></tr>
+          <tr><td>Click derecho + Q (viewport)</td><td>Desplazarte hacia abajo en la vista principal (viewport)</td></tr>
           <tr><td>Ctrl + D (viewport)</td><td>Crear duplicado del objeto seleccionado</td></tr>
           <tr><td>Ctrl + G (viewport)</td><td>Agrupa los objetos seleccionados</td></tr>
           <tr><td>Shift + G (viewport)</td><td>Desagrupa el grupo seleccionado</td></tr>
           <tr><td>W (viewport)</td><td>Movimiento del objeto seleccionado (translate)</td></tr>
           <tr><td>E (viewport)</td><td>Rotación del objeto seleccionado (rotate)</td></tr>
           <tr><td>R (viewport)</td><td>Escalar el objeto seleccionado (scale)</td></tr>
-          <tr><td>Barra espaciadora (viewport)</td><td>Alternar entre los modos de transformación en un objeto seleccionado; mover, rotar y escalar</td></tr>
+          <tr><td>Barra espaciadora (viewport)</td><td>Alternar entre los modos de transformación en un objeto seleccionado: mover, rotar y escalar</td></tr>
           <tr><td>Fin (viewport)</td><td>Alinear objeto seleccionado al suelo (snap to floor)</td></tr>
           <tr><td>F (viewport)</td><td>Enfoca en el objeto seleccionado (focus)</td></tr>
-          <tr><td>G (viewport)</td><td>Alterna la visibilidad de; cuadrículas, pivotes, contornos e íconos</td></tr>
-          <tr><td>T (viewport)</td><td>Alterna la selección de objetos transparentes, poder o no poder seleccionar a través de estos</td></tr>
+          <tr><td>G (viewport)</td><td>Alterna la visibilidad de cuadrículas, pivotes, contornos e íconos</td></tr>
+          <tr><td>T (viewport)</td><td>Alterna la selección de objetos transparentes (poder o no poder seleccionar a través de estos)</td></tr>
           <tr><td>P (viewport)</td><td>Alterna la visibilidad de la navegación o caminos (navigation / path finding for AI)</td></tr>
           <tr><td>Alt + G (viewport)</td><td>Establece la vista de perspectiva en la vista principal (perspective view)</td></tr>
           <tr><td>Alt + K (viewport)</td><td>Establece la vista lateral en la vista principal (side view)</td></tr>
           <tr><td>Alt + H (viewport)</td><td>Establece la vista cenital en la vista principal (top view)</td></tr>
           <tr><td>Alt + J (viewport)</td><td>Establece la vista frontal en la vista principal (front view)</td></tr>
-          <tr><td>Click izquierdo (graph editor)</td><td>Despliega el buscador de nodos (context menu)</td></tr>
-          <tr><td>Click izquierdo + arrastrar (graph editor)</td><td>Desplazamiento en el editor de gráficos (graph editor)</td></tr>
-          <tr><td>Click + 1 (graph editor)</td><td>Crea un parámetro de tipo float de un solo valor</td></tr>
-          <tr><td>Click + 2 (graph editor)</td><td>Crea un parámetro de tipo float de dos valores</td></tr>
-          <tr><td>Click + 3 (graph editor)</td><td>Crea un parámetro de tipo vector de tres valores</td></tr>
-          <tr><td>Click + B (graph editor)</td><td>Crea un nodo de ramificación (branch if statement)</td></tr>
-          <tr><td>Click + Alt (graph editor)</td><td>Desconecta todos los nodos conectados sobre el nodo donde se hace el click</td></tr>    
-        </tbody>
+          <tr><td>F11 (viewport)</td><td>Pantalla completa para la vista principal (viewport on fullscreen)</td></tr>
+
+          <tr><td>Click (eventgraph)</td><td>Despliega el buscador de nodos (context menu)</td></tr>
+          <tr><td>Click + arrastrar (eventgraph)</td><td>Desplazamiento en el editor de gráficos (eventgraph)</td></tr>
+          <tr><td>Doble click sobre conexión (eventgraph)</td><td>Añade un punto sobre la conexión (organizar nodos)</td></tr>
+          <tr><td>Click + Alt (eventgraph)</td><td>Desconecta todos los nodos conectados sobre el nodo que se hace el click</td></tr>
+          <tr><td>Click + B (eventgraph)</td><td>Crea un nodo tipo: branch</td></tr>
+          <tr><td>C (eventgraph & material graph)</td><td>Crea un bloque de comentario (comment)</td></tr>
+          <tr><td>Click + D (eventgraph)</td><td>Crea un nodo tipo: delay</td></tr>
+          <tr><td>Click + F (eventgraph)</td><td>Crea un nodo tipo: for each loop</td></tr>
+          <tr><td>Click + G (eventgraph)</td><td>Crea un nodo tipo: gate</td></tr>
+          <tr><td>Click + M (eventgraph)</td><td>Crea un nodo tipo: multigate</td></tr>
+          <tr><td>Click + N (eventgraph)</td><td>Crea un nodo tipo: do N (number of times)</td></tr>
+          <tr><td>Click + O (eventgraph)</td><td>Crea un nodo tipo: do once</td></tr>
+          <tr><td>Click + R (eventgraph)</td><td>Crea una wildcard (conexión independiente)</td></tr>
+          <tr><td>Click + S (eventgraph)</td><td>Crea un nodo tipo: sequence</td></tr>
+
+          <tr><td>Click + A (material graph)</td><td>Crea un nodo tipo: add</td></tr>
+          <tr><td>Click + B (material graph)</td><td>Crea un nodo tipo: bump offset</td></tr>
+          <tr><td>Click + D (material graph)</td><td>Crea un nodo tipo: divide</td></tr>
+          <tr><td>Click + E (material graph)</td><td>Crea un nodo tipo: power</td></tr>
+          <tr><td>Click + F (material graph)</td><td>Inserta una función sin especificación (unspecified function)</td></tr>
+          <tr><td>Click + I (material graph)</td><td>Crea un nodo tipo: if statement</td></tr>
+          <tr><td>Click + L (material graph)</td><td>Crea un nodo tipo: lerp</td></tr>
+          <tr><td>Click + M (material graph)</td><td>Crea un nodo tipo: multiply</td></tr>
+          <tr><td>Click + N (material graph)</td><td>Crea un nodo tipo: normalize</td></tr>
+          <tr><td>Click + O (material graph)</td><td>Crea un nodo tipo: 1-x</td></tr>
+          <tr><td>Click + P (material graph)</td><td>Crea un nodo tipo: panner</td></tr>
+          <tr><td>Click + R (material graph)</td><td>Crea un nodo tipo: reflection vector</td></tr>
+          <tr><td>Click + S (material graph)</td><td>Crea un nodo de parámetro vacío de un solo valor</td></tr>
+          <tr><td>Click + T (material graph)</td><td>Crea un nodo tipo: texture sample</td></tr>
+          <tr><td>Click + U (material graph)</td><td>Crea un nodo tipo: texCoord (texture coordinate)</td></tr>
+          <tr><td>Click + V (material graph)</td><td>Crea un nodo de parámetro vacío de cuatro valores (r, g, b, a)</td></tr>
       </table>
 
       <p id="noResults" class="no-results" style="display:none;">No se encontraron resultados.</p>
@@ -95,7 +124,7 @@
   </main>
 
   <footer>
-    <p>Contribuyentes: Jorge Alfonso</p>
+    <p>Contribuyentes: Jorge Alfonso, Isabella Orozco</p>
     <p>Con tu ayuda podemos hacer el repositorio mejor. Reporta bugs o envía sugerencias a:  <a href="mailto:repositorio.lad@gmail.com">repositorio.lad@gmail.com</a></p>
   </footer>
 

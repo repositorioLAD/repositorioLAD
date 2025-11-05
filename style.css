@@ -175,6 +175,7 @@ h2 {
   margin-bottom: 0;
 }
 
+/*images*/
 .page img {
   width: 21.875rem; 
   height: auto;
@@ -182,6 +183,16 @@ h2 {
   margin: 0;
 }
 
+.left {
+  float: left; /*side to float on*/
+  width: 25rem; 
+  padding-right: 2rem;
+}
+
+.right {
+  float: right; /*side to float on*/
+  width: 25rem; 
+}
 
 /*content*/
 body {
@@ -364,6 +375,16 @@ footer a:visited {
 
 .normalParagraph{
   padding: 1.5rem 0 1.5rem;
+  align-items: center;
+  gap: 0rem;
+}
+
+.rightParagraph{
+  padding: 1.5rem 1.5rem 1.5rem;
+  margin-left: 1.5rem;
+  align-items: center;
+  gap: 0rem;
+  text-align: left;
 }
 
 
@@ -374,7 +395,6 @@ footer a:visited {
     font-size: 0.95rem;
     padding-top: 0rem;
   }
-
 
   .megaTitle{
     font-size: 4.2rem;
@@ -494,7 +514,7 @@ footer a:visited {
   border-radius: 0rem; 
   box-shadow: 0 0rem 0rem; 
   padding: 0rem;
-  color: #d9d9d9;
+  color: #fff789;
   }
 
   .logout:hover {
@@ -503,7 +523,7 @@ footer a:visited {
     box-shadow: 0 0rem 0rem; 
     padding: 0rem;
     font-size: 1.4;
-    color: #fff789;
+    color: #e45846;
   }
 
 
@@ -542,10 +562,9 @@ footer a:visited {
   /* botón submenú */
   .dropBtn {
     display: block;
-    padding: .5rem;
-    background: #333;
-    border-radius: .5rem;
-    color: #e2a9f1;
+    padding: 0rem;
+    background: none;
+    color: #d9d9d9;
     cursor: pointer;
     width: 100%;
     text-align: left;
@@ -554,12 +573,19 @@ footer a:visited {
   /* contenedor submenú */
   .dropCnt {
     display: none;
-    padding-left: 1rem;
+    padding-left: .5rem;
     background: #222;
-    width: 100%;
+    border-radius: 0rem; 
+    box-shadow: 0 0.5rem 1rem #191919;
+    width: 50%;
     flex-direction: column;
   }
 
+  .dropCnt a:hover {
+    background-color: #191919;
+    border-radius: 0rem;
+    padding-left: 0rem;
+  }  
   /* mostrar submenú cuando su checkbox está checkeado */
   .submenu-toggle:checked + .dropBtn + .dropCnt {
     display: flex;
@@ -572,6 +598,17 @@ footer a:visited {
     color: #e2a9f1;
     text-decoration: none;
   }
+
+  .right {
+    float: none;
+    width: 100%;
+    max-width: 30rem;
+    height: auto;
+    margin: 0 auto;
+    padding: 8rem 0 0 0;
+    margin-bottom: 0%;
+  }
+
 
 }
 
