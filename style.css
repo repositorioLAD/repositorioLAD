@@ -183,9 +183,9 @@ h2 {
   margin: 0;
 }
 
-.left {
+.contactImages {
   float: left; /*side to float on*/
-  width: 25rem; 
+  width: 22rem; 
   padding-right: 2rem;
 }
 
@@ -379,13 +379,23 @@ footer a:visited {
   gap: 0rem;
 }
 
-.rightParagraph{
-  padding: 1.5rem 1.5rem 1.5rem;
-  margin-left: 1.5rem;
+.contactParagraph{
+  padding-bottom: 3rem;
   align-items: center;
   gap: 0rem;
   text-align: left;
 }
+
+.contactParagraph h1{
+  padding-bottom: 0rem;
+  margin-bottom: 0;
+}
+
+.contactParagraph p {
+  margin-top: 0;
+}
+
+
 
 
 
@@ -597,6 +607,16 @@ footer a:visited {
     padding: .3rem 0;
     color: #e2a9f1;
     text-decoration: none;
+  }
+  
+  .contactImages {
+    float: none;
+    width: 100%;
+    max-width: 22rem;
+    height: auto;
+    margin: 0 auto;
+    padding: 8rem 0 0 0;
+    margin-bottom: 0%;
   }
 
   .right {
