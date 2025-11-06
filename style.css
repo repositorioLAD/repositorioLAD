@@ -323,16 +323,29 @@ footer {
   border: 0;
 }
 
-footer a {
-  color: rgb(203, 147, 224);
+/*links*/
+main a{
+  color:#e2a9f1;
+}
+
+main a:hover {
+  color:#f9e0ff;
+}
+
+main a:visited {
+  color: #c781d8;
+}
+
+footer a{
+  color: #e2a9f1;
 }
 
 footer a:hover {
-  color:rgb(227, 202, 236);
+  color: #f9e0ff;
 }
 
 footer a:visited {
-  color:rgb(201, 101, 238);
+  color: #c781d8;
 }
 
 /*mega*/
@@ -381,26 +394,22 @@ footer a:visited {
 
 .contactParagraph{
   padding-bottom: 3rem;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   gap: 0rem;
   text-align: left;
 }
 
-.contactParagraph h2{
-  color: white;
+
+.contactParagraph h1, h2, h3{
+  margin: 0;
+  padding: 0;
 }
 
-a {
-  color: rgb(203, 147, 224);
+.contactParagraph ul{
+  margin-top: .5rem;
 }
 
-a:hover {
-  color:rgb(227, 202, 236);
-}
-
-a:visited {
-  color:rgb(201, 101, 238);
-}
 
 
 
@@ -627,7 +636,7 @@ a:visited {
   .contactParagraph{
     padding-bottom: 2rem;
     align-items: center;
-    gap: 0rem;
+    display: block;
     text-align: left;
   }
   .right {
