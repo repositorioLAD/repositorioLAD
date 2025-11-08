@@ -649,6 +649,16 @@ footer a:visited {
     margin-bottom: 0%;
   }
 
+  /*index*/
+  .login-box img {
+    width: 100%;
+    max-width: 18rem; 
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+
 
 }
 
