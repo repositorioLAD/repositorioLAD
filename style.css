@@ -7,20 +7,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #191919;
+  background: black;
 }
 
 .login-box {
-  background: #d9d9d9;
+  background: #191919;
   padding: 1.25rem; 
   border-radius: 5rem; 
-  box-shadow: 0 0.5rem 0.625rem black; 
   text-align: center;
   
 }
 
 .login-box img {
-  width: 21.875rem; 
+  width: 22rem; 
   height: auto;
   display: block;
   margin: 0 auto;
@@ -33,6 +32,7 @@ input {
   margin: 0.625rem 0; 
   width: 12.5rem; 
   border-radius: 1.5rem; 
+
   font-family: "DM Sans", Arial, sans-serif;
 }
 
@@ -44,6 +44,7 @@ button {
   color: black; /*text color*/
   border-radius: 1.5rem;
   cursor: pointer;
+  box-shadow: 0 0.5rem 0.5rem black;
 }
 
 .error {
@@ -191,8 +192,16 @@ h2 {
 
 .right {
   float: right; /*side to float on*/
-  width: 25rem; 
+  width: 100%;
+  max-width: 25rem; 
 }
+
+.left {
+  float: left; /*side to float on*/
+  width: 100%;
+  max-width: 15rem; 
+}
+
 
 /*content*/
 body {
@@ -379,6 +388,12 @@ footer a:visited {
 .biggerP{
   font-size: 1.4rem;
   padding: 4rem 0 4rem 0;
+}
+
+.biggerL{
+  font-size: 2rem;
+  padding: 4rem 0 8rem 0;
+  text-align: right;
 }
 
 .biggerFollowed{
@@ -639,13 +654,24 @@ footer a:visited {
     display: block;
     text-align: left;
   }
+
   .right {
+    float: none;
+    width: 100%;
+    max-width: 25rem;
+    height: auto;
+    margin: 0 auto;
+    padding: 1rem 0 0 0;
+    margin-bottom: 0%;
+  }
+
+  .left {
     float: none;
     width: 100%;
     max-width: 30rem;
     height: auto;
-    margin: 0 auto;
-    padding: 8rem 0 0 0;
+    margin: 0;
+    padding-top: 1rem;
     margin-bottom: 0%;
   }
 
@@ -657,6 +683,13 @@ footer a:visited {
     display: block;
     margin: 0 auto;
   }
+
+  .biggerL{
+    font-size: 1.5rem;
+    padding: .5rem 0 8rem 0;
+    text-align: center;
+  }
+
 
 
 
