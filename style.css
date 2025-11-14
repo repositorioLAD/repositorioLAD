@@ -193,8 +193,15 @@ h2 {
 .right {
   float: right; /*side to float on*/
   width: 100%;
-  max-width: 25rem; 
+  max-width: 20rem; 
 }
+
+.left2 {
+  float: left; /*side to float on*/
+  width: 100%;
+  max-width: 20rem; 
+}
+
 
 .left {
   float: left; /*side to float on*/
@@ -405,6 +412,15 @@ footer a:visited {
   padding: 1.5rem 0 1.5rem;
   align-items: center;
   gap: 0rem;
+}
+
+
+.normalLeftParagraph{
+  padding: 1.5rem 0 1.5rem;
+  align-items: center;
+  gap: 0rem;
+  text-align: right;
+  padding-bottom: 6rem;
 }
 
 .contactParagraph{
@@ -659,6 +675,16 @@ footer a:visited {
     float: none;
     width: 100%;
     max-width: 25rem;
+    height: auto;
+    margin: 0 auto;
+    padding: 1rem 0 0 0;
+    margin-bottom: 0%;
+  }
+
+  .left2 {
+    float: none;
+    width: 100%;
+    max-width: 20rem;
     height: auto;
     margin: 0 auto;
     padding: 1rem 0 0 0;
